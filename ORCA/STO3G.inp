@@ -1,0 +1,11 @@
+! CAM-B3LYP STO-3G  def2/J TightSCF RIJCOSX
+%maxcore 2000
+%tddft
+   ETol 1e-6
+   RTol 1e-6
+   nroots 10
+   maxdim 100
+   tprint 1E-10
+   triplets false
+end
+
