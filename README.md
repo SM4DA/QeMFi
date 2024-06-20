@@ -3,7 +3,9 @@ This code repository is connected to the CheMFi dataset and its application. It 
 
 The package for python scripts can be installed by cloning this repository and installing the required packages. This can be performed within a new conda environment, say `CheMFi_env`, as follows:
 
-`$ conda create --name CheMFi_env python=3.10.12` 
+```bash
+$ conda create --name CheMFi_env python=3.10.12
+``` 
 
 Then, we install the required python libraries with:
 
@@ -41,7 +43,7 @@ import numpy as np
 acrolein_data = np.load('CheMFi_acrolein.npz',allow_pickle=True) #pickled since object array
 
 #list various files in the data
-acrolein_data.files #results in ['ID','R','Z','CONF','SCF','EV','TrDP','fosc','DPe','DPn','RCo','DPRo']
+print(acrolein_data.files) #results in ['ID','R','Z','CONF','SCF','EV','TrDP','fosc','DPe','DPn','RCo','DPRo']
 
 ​#access oscillator strength values of first excitation state with STO3G fidelity
 fosc_STO3G_0 = acrolein_data['fosc'][:,0,0]
@@ -61,7 +63,7 @@ MFML is a powerful method to learn QC properties. In this work package, the ML m
 
 ```bash
 $ conda activate CheMFi_env
-$ python PrelimAnalysis.py -m=alanine' -d='path_to_npz_file/' -p='DPn' -u='a.u.' -c=0 --centeroffset --saveplot 
+$ python PrelimAnalysis.py -m='alanine' -d='path_to_npz_file/' -p='DPn' -u='a.u.' -c=0 --centeroffset --saveplot 
 ```
 
 Simiarly, one can perform the preliminary analysis for the other QC properties. One can get more details about the python script by using `$ python PrelimAnalysis.py --help`.
@@ -72,7 +74,7 @@ The following example, generates learning curves for the SCF property of acrolei
 ```bash
 $ conda activate CheMFi_env
 $ python LearningCurves.py -m='acrolein' -d='path_to_npz_file' -p=SCF' -n=1 -w=150.0 -rep='SLATM' -k='laplacian' -r=1e-10 -s=42 --centeroffset
-$ python LC_plots.py -m='acrolein' -p=SCF' -u='hE' -rep='SLATM' --centeroffset --saveplot
+$ python LC_plots.py -m='acrolein' -p='SCF' -u='hE' -rep='SLATM' --centeroffset --saveplot
 ```
 
 For more details about each flag, use `$python LearningCurves.py --help`. Note that running the learning curves will take some time and depends also on the number of runs you wish to average over.
@@ -89,5 +91,5 @@ In interest of full transparency, the ORCA calculations scripts and input files 
 When using the CheMFi dataset or the scripts provided herein, please cite the following:
 
 1. Vinod, V., & Zaspel, P. (2024). CheMFi: A Multifidelity Dataset of Quantum Chemical Properties of Diverse Molecules (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.11636903
-2. Paper citation
+2. Paper citation TBA
 
