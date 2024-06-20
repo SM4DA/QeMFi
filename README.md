@@ -73,7 +73,7 @@ Learning curves indicate the model error (such as MAE or RMSE) wityh increasing 
 The following example, generates learning curves for the SCF property of acrolein. Note that the representation of interest should have already been generated (see above).
 ```bash
 $ conda activate CheMFi_env
-$ python LearningCurves.py -m='acrolein' -d='path_to_npz_file' -p=SCF' -n=1 -w=150.0 -rep='SLATM' -k='laplacian' -r=1e-10 -s=42 --centeroffset
+$ python LearningCurves.py -m='acrolein' -d='path_to_npz_file' -p='SCF' -n=1 -w=150.0 -rep='SLATM' -k='laplacian' -r=1e-10 -s=42 --centeroffset
 $ python LC_plots.py -m='acrolein' -p='SCF' -u='hE' -rep='SLATM' --centeroffset --saveplot
 ```
 
