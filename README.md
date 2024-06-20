@@ -11,7 +11,7 @@ Then, we install the required python libraries with:
 
 ```bash
 $ conda activate CheMFi_env
-$ pip install -r requirements.txt
+(CheMFi_env)$ pip install -r requirements.txt
 ```
 
 We are now ready to perform ML and MFML for QC with this code repository.
@@ -21,7 +21,7 @@ Once the data files are downloaded from the data repository [https://zenodo.org/
 
 ```bash
 $ conda activate CheMFi_env
-$ python GenerateCM.py -m='nitrophenol' -d='path_to_npz_file/' -s='unsorted'
+(CheMFi_env)$ python GenerateCM.py -m='nitrophenol' -d='path_to_npz_file/' -s='unsorted'
 ```
 
 The same script can be used to generate row-norm sorted CMs with `-s='row-norm'`. The directory path is the location of the dowloaded data files. The representations will be saved in the current working directory.
@@ -30,7 +30,7 @@ One can similarly generate the SLATM representation. In this example, for urea:
 
 ```bash
 $ conda activate CheMFi_env
-$ python GenerateSLATM.py -m='urea' -d='path_to_npz_file/'
+(CheMFi_env)$ python GenerateSLATM.py -m='urea' -d='path_to_npz_file/'
 ```
 
 ## Loading The Dataset for use
@@ -63,7 +63,7 @@ MFML is a powerful method to learn QC properties. In this work package, the ML m
 
 ```bash
 $ conda activate CheMFi_env
-$ python PrelimAnalysis.py -m='alanine' -d='path_to_npz_file/' -p='DPn' -u='a.u.' -c=0 --centeroffset --saveplot 
+(CheMFi_env)$ python PrelimAnalysis.py -m='alanine' -d='path_to_npz_file/' -p='DPn' -u='a.u.' -c=0 --centeroffset --saveplot 
 ```
 
 Simiarly, one can perform the preliminary analysis for the other QC properties. One can get more details about the python script by using `$ python PrelimAnalysis.py --help`.
@@ -73,19 +73,19 @@ Learning curves indicate the model error (such as MAE or RMSE) wityh increasing 
 The following example, generates learning curves for the SCF property of acrolein. Note that the representation of interest should have already been generated (see above).
 ```bash
 $ conda activate CheMFi_env
-$ python LearningCurves.py -m='acrolein' -d='path_to_npz_file' -p='SCF' -n=1 -w=150.0 -rep='SLATM' -k='laplacian' -r=1e-10 -s=42 --centeroffset
-$ python LC_plots.py -m='acrolein' -p='SCF' -u='hE' -rep='SLATM' --centeroffset --saveplot
+(CheMFi_env)$ python LearningCurves.py -m='acrolein' -d='path_to_npz_file' -p='SCF' -n=1 -w=150.0 -rep='SLATM' -k='laplacian' -r=1e-10 -s=42 --centeroffset
+(CheMFi_env)$ python LC_plots.py -m='acrolein' -p='SCF' -u='hE' -rep='SLATM' --centeroffset --saveplot
 ```
 
 For more details about each flag, use `$python LearningCurves.py --help`. Note that running the learning curves will take some time and depends also on the number of runs you wish to average over.
 The plots are saved as a pdf file.
 
 ## Composite Use of CheMFi
-In xxxxpaperURL, the use of CheMFi as a composite dataset is described. The corresponding script is presented in this code repository as `SpecialStudy.py`. The `prep_data()` function within this script can be modified to generate the composite data set for a desired property. 
+In paperURL (TBA), the use of CheMFi as a composite dataset is described. The corresponding script is presented in this code repository as `SpecialStudy.py`. The `prep_data()` function within this script can be modified to generate the composite data set for a desired property. 
 
 
 ## ORCA ipnut file and related scripts
-In interest of full transparency, the ORCA calculations scripts and input files for the five fidelities are provided in this code repository. The `ORCA_Calc_job.sh` can be used to run ORCA calculations for a given molecule for a given fidelity. The number of geometries to consider can be modified therein. The QC properties resulting from ORCA calculations can be extracted using the `prop_extraction.sh` script. The text file `single_mol_config.txt` is a lookup table that matches the sequence number (of an ORCA calculation when run in a loop) to the corresponding geometry number from the original WS22 database.  
+In interest of full transparency, the ORCA calculations scripts and input files for the five fidelities are provided in this code repository. The `ORCA_Calc_job.sh` can be used to run ORCA calculations for a given molecule for a given fidelity. The number of geometries to consider can be modified therein. The QC properties resulting from ORCA calculations can be extracted using the `prop_extraction.sh` script. The text file `single_mol_config.txt` is a lookup table that matches the sequence number (of an ORCA calculation when run in a loop) to the corresponding geometry number from the original WS22 database. The dataset itself was created using the script `CreateDataset.py` which is also provided in this code repository.
 
 ## Citing This Work
 When using the CheMFi dataset or the scripts provided herein, please cite the following:
