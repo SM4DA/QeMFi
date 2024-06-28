@@ -1,5 +1,5 @@
 # CheMFi: A Multifidelity Dataset of Quantum Chemical Properties of Diverse Molecules
-This code repository is connected to the CheMFi dataset and its application. It contains codes to run ORCA calculations for the fidelities, the corresponding input files, and the python scripts to perform various multifidelity calculations as noted in paperDOIXXXX. 
+This code repository is connected to the CheMFi dataset and its application. It contains codes to run ORCA calculations for the fidelities, the corresponding input files, and the python scripts to perform various multifidelity calculations as noted in [this preprint](https://arxiv.org/abs/2406.14149). 
 
 The package for python scripts can be installed by cloning this repository and installing the required packages. This can be performed within a new conda environment, say `CheMFi_env`, as follows:
 
@@ -17,7 +17,7 @@ $ conda activate CheMFi_env
 We are now ready to perform ML and MFML for QC with this code repository.
 
 ## Generating Molecular Descriptors/Representations
-Once the data files are downloaded from the data repository [https://zenodo.org/records/11636903], one can use them to generate molecular descriptors for ML and Multifidelity ML (MFML). In this code repository, the scripts to generate Coloumb Matrices (CM) and the spectrum of London and Axilrod–Teller–Muto (SLATM) representation are provided. The following example will demonstrate generating the unsorted CMs for nitrophenol from the CheMFi dataset.
+Once the data files are downloaded from the [data repository](https://zenodo.org/records/11636903), one can use them to generate molecular descriptors for ML and Multifidelity ML (MFML). In this code repository, the scripts to generate Coloumb Matrices (CM) and the spectrum of London and Axilrod–Teller–Muto (SLATM) representation are provided. The following example will demonstrate generating the unsorted CMs for nitrophenol from the CheMFi dataset.
 
 ```bash
 $ conda activate CheMFi_env
@@ -59,7 +59,7 @@ confs = acrolein_data['CONF']
 There are various QC properties provided in this dataset for 5 different fidelities, each of which can be accessed with their appropriate key and array ID. For each molecule there are 15,000 entries for each property at each fidelity.
 
 ## Performing Preliminary Multifidelity Analysis
-MFML is a powerful method to learn QC properties. In this work package, the ML method of choice is Kernel Ridge Regression (KRR). With KRR, MFML and optimized MFML (o-MFML) are implemented through the scripts. But before the models are implemented, a preliminary analysis of the multifidelity data structure is recommended to anticipate results of MFML (see [https://pubs.acs.org/doi/10.1021/acs.jctc.3c00882]). The following example performs the preliminary mutlifidelity analysis and returns the corresponding plots for the x-component of nuclear contribution of molecular dipole moments for alanine:
+MFML is a powerful method to learn QC properties. In this work package, the ML method of choice is Kernel Ridge Regression (KRR). With KRR, MFML and optimized MFML (o-MFML) are implemented through the scripts. But before the models are implemented, a preliminary analysis of the multifidelity data structure is recommended to anticipate results of MFML (see [Vinod et al. 2023](https://pubs.acs.org/doi/10.1021/acs.jctc.3c00882)). The following example performs the preliminary mutlifidelity analysis and returns the corresponding plots for the x-component of nuclear contribution of molecular dipole moments for alanine:
 
 ```bash
 $ conda activate CheMFi_env
@@ -69,7 +69,7 @@ $ conda activate CheMFi_env
 Simiarly, one can perform the preliminary analysis for the other QC properties. One can get more details about the python script by using `$ python PrelimAnalysis.py --help`.
 
 ## MFML Learning Curves
-Learning curves indicate the model error (such as MAE or RMSE) wityh increasing model complexity. In the case of KRR, model complexity is controlled by the number of the training samples used. Therefore, one can study the learning curves as MAE vs training samples used. For multifidelity models, the number of training samples used at the highest fidelity are considered to maintain uniform comparison (see [https://pubs.acs.org/doi/10.1021/acs.jctc.3c00882] and [https://iopscience.iop.org/article/10.1088/2632-2153/ad2cef] for more details on deciphering learning curves).
+Learning curves indicate the model error (such as MAE or RMSE) wityh increasing model complexity. In the case of KRR, model complexity is controlled by the number of the training samples used. Therefore, one can study the learning curves as MAE vs training samples used. For multifidelity models, the number of training samples used at the highest fidelity are considered to maintain uniform comparison (see [Vinod et al. 2023](https://pubs.acs.org/doi/10.1021/acs.jctc.3c00882) and [Vinod et al. 2024](https://iopscience.iop.org/article/10.1088/2632-2153/ad2cef) for more details on deciphering learning curves).
 The following example, generates learning curves for the SCF property of acrolein. Note that the representation of interest should have already been generated (see above).
 ```bash
 $ conda activate CheMFi_env
@@ -91,5 +91,5 @@ In interest of full transparency, the ORCA calculations scripts and input files 
 When using the CheMFi dataset or the scripts provided herein, please cite the following:
 
 1. Vinod, V., & Zaspel, P. (2024). CheMFi: A Multifidelity Dataset of Quantum Chemical Properties of Diverse Molecules (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.11636903
-2. Paper citation TBA
+2. **Preprint Version:** Vinod, V., & Zaspel, P. (2024). CheMFi: A Multifidelity Dataset of Quantum Chemical Properties of Diverse Molecules. arXiv preprint arXiv:2406.14149
 
