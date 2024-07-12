@@ -123,7 +123,7 @@ def plot_function(sf:np.ndarray, mfml:np.ndarray, omfml:np.ndarray, units:str='u
     return fig
 
 def main():
-    sf = np.load(f'SF_{args.molecule}_{args.property}_{args.level}_{args.component}.npy')
+    sf = np.load(f'SF_{args.molecule}_{args.representation}_{args.property}_{args.level}_{args.component}.npy')
     mfml = np.zeros((4),dtype=object)
     omfml = np.zeros((4),dtype=object)
     
