@@ -353,7 +353,7 @@ def varying_baselines(molname:str, sig:float, reg:float=1-10, navg:int=1):
                                 sigma=sig, reg=reg,
                                 navg=navg) 
     
-    np.save(f'SF_{molname}_{args.property}_{args.level}_{args.component}.npy', sf_maes)
+    np.save(f'SF_{molname}_{args.representation}_{args.property}_{args.level}_{args.component}.npy', sf_maes)
     
     for fb in tqdm(range(4),desc='Baseline loop...'):
         indexes = np.load('indexes.npy',allow_pickle=True)
@@ -361,8 +361,8 @@ def varying_baselines(molname:str, sig:float, reg:float=1-10, navg:int=1):
                                    X_train=X_train, X_test=X_test, 
                                    X_val=X_val, y_test=y_test, y_val=y_val, 
                                    sigma=sig, reg=reg, navg=navg)
-        np.save(f'OLS_{molname}_{args.property}_{args.level}_{args.component}_{str(fb)}.npy',maeols)
-        np.save(f'def_{molname}_{args.property}_{args.level}_{args.component}_{str(fb)}.npy',maedef)
+        np.save(f'OLS_{molname}_{args.representation}_{args.property}_{args.level}_{args.component}_{str(fb)}.npy',maeols)
+        np.save(f'def_{molname}_{args.representation}_{args.property}_{args.level}_{args.component}_{str(fb)}.npy',maedef)
     
 ## run the process
 varying_baselines(args.molecule, sig=args.width, reg=args.regularizer, navg=args.navg)
