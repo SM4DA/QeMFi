@@ -128,8 +128,8 @@ def main():
     omfml = np.zeros((4),dtype=object)
     
     for i in range(4):
-        omfml[i] = np.load(f'OLS_{args.molecule}_{args.property}_{args.level}_{args.component}_{str(i)}.npy')
-        mfml[i] = np.load(f'def_{args.molecule}_{args.property}_{args.level}_{args.component}_{str(i)}.npy')
+        omfml[i] = np.load(f'OLS_{args.molecule}_{args.representation}_{args.property}_{args.level}_{args.component}_{str(i)}.npy')
+        mfml[i] = np.load(f'def_{args.molecule}_{args.representation}_{args.property}_{args.level}_{args.component}_{str(i)}.npy')
     figure = plot_function(sf=sf, mfml=mfml, omfml=omfml, units=args.units)
     
     if args.saveplot:
