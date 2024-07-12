@@ -121,7 +121,6 @@ def data_extraction(molname:str='urea',seed:int=42):
     
     #load correct rep for molecule and type of rep
     X_full = np.load(f'{molname}_{args.representation}.npy')
-    
     #train energies
     train_energies = np.zeros((5),dtype=object)
     for i in range(5):
