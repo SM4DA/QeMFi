@@ -76,6 +76,11 @@ $ conda activate CheMFi_env
 (CheMFi_env)$ python LearningCurves.py -m='acrolein' -d='path_to_npz_file' -p='SCF' -n=1 -w=150.0 -rep='SLATM' -k='laplacian' -r=1e-10 -s=42 --centeroffset
 (CheMFi_env)$ python LC_plots.py -m='acrolein' -p='SCF' -u='hE' -rep='SLATM' --centeroffset --saveplot
 ```
+In addition to the usual learning curves which plot MAE (or some other error) vs the number of trianing samples, the `TimeLC_plots.py` script can be used to generate the plot of time to generate a training set versus MAE (see [Vinod et al. 2023](https://pubs.acs.org/doi/10.1021/acs.jctc.3c00882) for more details). This is achieved with a call similar to the `LC_plots.py` script after running the script to generate the data for learning curves:
+```bash
+(CheMFi_env)$ python TimeLC_plots.py -m='acrolein' -d='path_to_npzfile/' -p='SCF' -u='hE' -rep='SLATM' --centeroffset --saveplot
+```
+where the additional `-d` flag corresponds to the directory of the CheMFi dataset to load the data of time calculations.
 
 For more details about each flag, use `$python LearningCurves.py --help`. Note that running the learning curves will take some time and depends also on the number of runs you wish to average over.
 The plots are saved as a pdf file.
