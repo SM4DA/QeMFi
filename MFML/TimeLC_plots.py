@@ -121,8 +121,8 @@ def plot_function(sf:np.ndarray, mfml:np.ndarray, omfml:np.ndarray, times:np.nda
     
     #multyifidelity plots
     for i in range(4):
-        ax[0].loglog(MFML_times[i+1], 1e3*mfml[i], color=colors[i],marker=markers[i], linestyle='--')
-        ax[1].loglog(MFML_times[i+1], 1e3*omfml[i], color=colors[i],marker=markers[i], linestyle='-')
+        ax[0].loglog(MFML_times[i+1], 1e3*mfml[i], color=colors[i+1],marker=markers[i], linestyle='--')
+        ax[1].loglog(MFML_times[i+1], 1e3*omfml[i], color=colors[i+1],marker=markers[i], linestyle='-')
     
     #cosmetics of the plots
     for i in range(2):
