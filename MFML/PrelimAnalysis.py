@@ -116,7 +116,7 @@ def prelim_analysis(data:np.ndarray,center:bool=True,units:str=args.units):
     ax[2].ticklabel_format(axis='both',scilimits=[-1,1])
         
     ax[1].errorbar(fids[:-1],diffs,std,color='k',ecolor='red',capsize=3,elinewidth=1,barsabove=True)
-    ax[1].set_ylabel('$\Delta y_f^F$'+f'[{units}]')
+    ax[1].set_ylabel('$\Delta y_f^{TZVP}$'+f'[{units}]')
     
     ax[2].set_xlabel(r'$y^{f}$'+f' [{units}]')
     ax[2].set_ylabel(r'$y^{TZVP}$'+ f' [{units}]')
