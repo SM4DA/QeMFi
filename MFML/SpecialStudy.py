@@ -23,7 +23,7 @@ def prep_data():
         idx_names[start:end] = np.copy(names)
         temp_X = np.load(f'Reps/{m}_SLATM.npy')
         X[start:end,:temp_X.shape[-1]] = temp_X[idx,:]
-        temp_data=np.load(f'../dataset/CheMFi_{m}.npz')['SCF']
+        temp_data=np.load(f'../dataset/QeMFi_{m}.npz')['SCF']
         y_all[start:end,:] = temp_data[idx,:]
         
         #increment for next molecule
