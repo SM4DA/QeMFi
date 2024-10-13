@@ -39,7 +39,7 @@ def create_MF24Dataset(molname):
         RCo[:,i,:] = np.loadtxt(f'propertyzips/{molname}/{fids[i]}_RotConst.dat')
         DPRo[:,i,:] = np.loadtxt(f'propertyzips/{molname}/{fids[i]}_DPRo.dat')
     
-    np.savez(f'dataset/CheMFi_{molname}.npz',
+    np.savez(f'dataset/QeMFi_{molname}.npz',
              ID=sampling, R=coords, Z=Zs, CONF=confs,
              SCF=SCF, 
              EV=EV, TrDP=TrDP, fosc=fosc,
