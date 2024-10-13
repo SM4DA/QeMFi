@@ -27,7 +27,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 '''
-Script to generate preliminary analysis plots for the various data of CheMFi database.
+Script to generate preliminary analysis plots for the various data of QeMFi database.
 '''
 
 import numpy as np
@@ -36,16 +36,16 @@ import seaborn as sns
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("-m", "--molecule", 
-                    help="Name of the molecule from the CheMFi dataset. Default is urea.",
+                    help="Name of the molecule from the QeMFi dataset. Default is urea.",
                     type=str, default='urea')
 parser.add_argument("-d", "--directorypath", 
                     help="Path to the database of molecule including the last '/'. Default is '../dataset/'.",
                     type=str, default='../dataset/')
 parser.add_argument("-p", "--property", 
-                    help="Property of interest for which prelim analysis is to be performed. use data.files to check for valid keys in the CheMFi dataset. Default is SCF.", 
+                    help="Property of interest for which prelim analysis is to be performed. use data.files to check for valid keys in the QeMFi dataset. Default is SCF.", 
                     type=str, default='SCF')
 parser.add_argument("-u", "--units", 
-                    help="Unity of the property of interest for which prelim analysis is to be performed. use data.files to check for valid keys in the CheMFi dataset. Default is units.", 
+                    help="Unity of the property of interest for which prelim analysis is to be performed. use data.files to check for valid keys in the QeMFi dataset. Default is units.", 
                     type=str, default='units')
 parser.add_argument("-l", "--level", 
                     help="Optional index value used only for level in excitation energy properties such as energies or fosc. Default is set to 0, that is , the first level. ",
@@ -130,7 +130,7 @@ def prelim_analysis(data:np.ndarray,center:bool=True,units:str=args.units):
     return fig
 
 #load database
-data = np.load(f'{args.directorypath}CheMFi_{args.molecule}.npz')[f'{args.property}']
+data = np.load(f'{args.directorypath}QeMFi_{args.molecule}.npz')[f'{args.property}']
 
 #make prelim checks for size of data arrays
 #make corresponding data array and perform analysis
