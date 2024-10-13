@@ -79,7 +79,7 @@ def plot_function(sf:np.ndarray, mfml:np.ndarray, omfml:np.ndarray, times:np.nda
     omfml : np.ndarray
         MAEs from OLS optimized o-MFML.
     times : np.ndarray
-        Compute times for the QC calculations. This will be taken from the CheMFi dataset.
+        Compute times for the QC calculations. This will be taken from the QeMFi dataset.
     units : str, optional
         Units of the property. This will be read from the args parser. The default is 'units'.
     
@@ -143,7 +143,7 @@ def main():
     mfml = np.zeros((4),dtype=object)
     omfml = np.zeros((4),dtype=object)
     
-    calc_times = np.load(f'{args.directorypath}CheMFi_{args.molecule}.npz',allow_pickle=True)['t']
+    calc_times = np.load(f'{args.directorypath}QeMFi_{args.molecule}.npz',allow_pickle=True)['t']
     
     for i in range(4):
         omfml[i] = np.load(f'OLS_{args.molecule}_{args.representation}_{args.property}_{args.level}_{args.component}_{3-i}.npy')
