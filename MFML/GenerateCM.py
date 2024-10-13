@@ -27,7 +27,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 '''
-Script to generate unsorted CM representations for all 15,000 samples of a given molecule from the CheMFi database.
+Script to generate unsorted CM representations for all 15,000 samples of a given molecule from the QeMFi database.
 '''
 
 import numpy as np
@@ -36,7 +36,7 @@ from tqdm import tqdm
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("-m", "--molecule", 
-                    help="Name of the molecule from the CheMFi dataset. Default is urea.",
+                    help="Name of the molecule from the QeMFi dataset. Default is urea.",
                     type=str, default='urea')
 parser.add_argument("-d", "--directorypath", 
                     help="Path to the database of molecule including the last '/'. Default is '../dataset/'.",
@@ -63,7 +63,7 @@ def generate_CM(molname:str='urea',data_path:str='../dataset/'):
     None.
 
     '''
-    npz = np.load(f'{data_path}CheMFi_{molname}.npz',allow_pickle=True)
+    npz = np.load(f'{data_path}QeMFi_{molname}.npz',allow_pickle=True)
     n = npz['R'].shape[0]
     reps = []
     Zs = npz['Z']
