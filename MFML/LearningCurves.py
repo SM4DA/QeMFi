@@ -108,7 +108,7 @@ def data_extraction(molname:str='urea',seed:int=42):
         test energies at target fidelity (in this case TZVP).
 
     '''
-    dataset = np.load(f'{args.directorypath}CheMFi_{molname}.npz',allow_pickle=True)[f'{args.property}']
+    dataset = np.load(f'{args.directorypath}QeMFi_{molname}.npz',allow_pickle=True)[f'{args.property}']
     #special cases of data. Pick the correct property for KRR.
     if args.property=='TrDP':
         dataset = dataset[:,:,args.level,args.component]
