@@ -5,9 +5,14 @@ The package for python scripts can be installed by cloning this repository and i
 
 ```bash
 $ conda create --name QeMFi_env python=3.10.12
-``` 
+```
 
-Then, we install the required python libraries with:
+Since the python scripts in this repository use `qmlcode`, it is necessary to first install the dependencies for this package as directed in [the documentation](https://www.qmlcode.org/installation.html) by running
+```bash
+$ sudo apt-get install python-pip gfortran libblas-dev liblapack-dev git
+```
+
+Then, we install the required python libraries from the `requirement.txt` file with:
 
 ```bash
 $ conda activate QeMFi_env
