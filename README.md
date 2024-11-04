@@ -18,10 +18,13 @@ Then, we install the required python libraries from the `requirement.txt` file w
 $ conda activate QeMFi_env
 (QeMFi_env)$ pip install -r requirements.txt
 ```
-As a last installation, let us install the `qml` package using
+
+Currently the `qml` package is out of date with respect to the `numpy` versions it was built on. This prevents installation from the usual pip methods. As a temporary workaround, we run the following commands
 ```bash
+$ conda install "setuptools <65"
 $ pip install qml --user -U
 ```
+where the first line installs from `conda` the dependencies that are missing due to numpy versioning issues and the second line is the usual pip installation of the `qml` package.
 
 We are now ready to perform ML and MFML for QC with this code repository.
 
