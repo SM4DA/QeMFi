@@ -4,7 +4,7 @@ This code repository is connected to the QeMFi dataset and its application. It c
 The package for python scripts can be installed by cloning this repository and installing the required packages. This can be performed within a new conda environment, say `QeMFi_env`, as follows:
 
 ```bash
-$ conda create --name QeMFi_env python=3.10.12
+$ conda create --name QeMFi_env python=3.9.18
 ```
 
 Since the python scripts in this repository use `qmlcode`, it is necessary to first install the dependencies for this package as directed in [the documentation](https://www.qmlcode.org/installation.html) by running
@@ -17,6 +17,10 @@ Then, we install the required python libraries from the `requirement.txt` file w
 ```bash
 $ conda activate QeMFi_env
 (QeMFi_env)$ pip install -r requirements.txt
+```
+As a last installation, let us install the `qml` package using
+```bash
+$ pip install qml --user -U
 ```
 
 We are now ready to perform ML and MFML for QC with this code repository.
