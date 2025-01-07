@@ -101,7 +101,7 @@ The plots are saved as a pdf file.
 In paperURL (TBA), the use of QeMFi as a composite dataset is described. The corresponding script is presented in this code repository as `SpecialStudy.py`. The `prep_data()` function within this script can be modified to generate the composite data set for a desired property. 
 
 
-## ORCA ipnut file and related scripts
+## ORCA input file and related scripts
 In interest of full transparency, the ORCA calculations scripts and input files for the five fidelities are provided in this code repository. The `ORCA_Calc_job.sh` can be used to run ORCA calculations for a given molecule for a given fidelity. The number of geometries to consider can be modified therein. The QC properties resulting from ORCA calculations can be extracted using the `prop_extraction.sh` script. The text file `single_mol_config.txt` is a lookup table that matches the sequence number (of an ORCA calculation when run in a loop) to the corresponding geometry number from the original WS22 database. The dataset itself was created using the script `CreateDataset.py` which is also provided in this code repository.
 
 ## Citing This Work
