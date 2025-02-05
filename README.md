@@ -1,5 +1,5 @@
 # QeMFi: A Multifidelity Dataset of Quantum Chemical Properties of Diverse Molecules
-This code repository is connected to the QeMFi dataset and its application. It contains codes to run ORCA calculations for the fidelities, the corresponding input files, and the python scripts to perform various multifidelity calculations as noted in [this preprint](https://arxiv.org/abs/2406.14149). 
+This code repository is connected to the QeMFi dataset and its application. It contains codes to run ORCA calculations for the fidelities, the corresponding input files, and the python scripts to perform various multifidelity calculations as noted in the associated [open source publication](https://doi.org/10.1038/s41597-024-04247-3). 
 
 The package for python scripts can be installed by cloning this repository and installing the required packages. This can be performed within a new conda environment, say `QeMFi_env`, as follows:
 
