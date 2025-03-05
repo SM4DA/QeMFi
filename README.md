@@ -98,7 +98,7 @@ For more details about each flag, use `$python LearningCurves.py --help`. Note t
 The plots are saved as a pdf file.
 
 ## Composite Use of QeMFi
-In paperURL (TBA), the use of QeMFi as a composite dataset is described. The corresponding script is presented in this code repository as `SpecialStudy.py`. The `prep_data()` function within this script can be modified to generate the composite data set for a desired property. 
+In [associated publication](https://doi.org/10.1038/s41597-024-04247-3), the use of QeMFi as a composite dataset is described. The corresponding script is presented in this code repository as `SpecialStudy.py`. The `prep_data()` function within this script can be modified to generate the composite data set for a desired property. 
 
 
 ## ORCA input file and related scripts
